@@ -1,7 +1,7 @@
 [project]
 name = "mlofinal"
 version = "0.1.0"
-description = "Add your description here"
+description = "ML Ops final project: end-to-end Titanic survival prediction pipeline with data download, preprocessing, baseline model training, and a CLI entrypoint."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
