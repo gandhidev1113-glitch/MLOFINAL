@@ -34,7 +34,8 @@ This project implements an end-to-end ML Ops pipeline for predicting passenger s
   - Data pipeline development (download, preprocessing)
   - Baseline model training and evaluation
   - Code organization and documentation
-- Member 2: [Name] - [Role/Responsibilities]
+- **DEVKUMAR PARIKSHIT GANDHI** - DevOps & Automation Engineer
+  - CI/CD pipeline setup (GitHub Actions), Dockerization, and environment consistency.
 - Member 3: [Name] - [Role/Responsibilities]
 - Member 4: [Name] - [Role/Responsibilities]
 
