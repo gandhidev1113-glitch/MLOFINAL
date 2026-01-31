@@ -36,7 +36,13 @@ This project implements an end-to-end ML Ops pipeline for predicting passenger s
   - Code organization and documentation
 - **DEVKUMAR PARIKSHIT GANDHI** - DevOps & Automation Engineer
   - CI/CD pipeline setup (GitHub Actions), Dockerization, and environment consistency.
-- Member 3: [Name] - [Role/Responsibilities]
+- **Thai Bao DUONG** - Serving & Monitoring Engineer (FastAPI Owner)
+   - Build and maintain the FastAPI inference service: POST /predict, GET /health, GET /ready with Pydantic schemas and consistent error handling.
+	- Implement model loading interface (artifact path / MODEL_URI) aligned with training outputs and MLflow conventions.
+	- Add basic observability: structured logs + simple runtime metrics (latency, request/error counts) suitable for Docker runtime.
+	- Write API contract tests (pytest/TestClient) for /predict, /health, /ready to prevent regressions.
+	- Backup support for unit testing: contribute additional unit tests when needed (especially around serving-related utilities/interfaces) and assist the Quality Lead in maintaining coverage targets.
+   
 - Member 4: [Name] - [Role/Responsibilities]
 
 ## 🚀 Getting Started
