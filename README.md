@@ -42,6 +42,12 @@ This project implements an end-to-end ML Ops pipeline for predicting passenger s
 	- Add basic observability: structured logs + simple runtime metrics (latency, request/error counts) suitable for Docker runtime.
 	- Write API contract tests (pytest/TestClient) for /predict, /health, /ready to prevent regressions.
 	- Backup support for unit testing: contribute additional unit tests when needed (especially around serving-related utilities/interfaces) and assist the Quality Lead in maintaining coverage targets.
+- **Sofyen Fenich** - ML Scientist & Model Validation 
+   - Implement and compare multiple models.
+	- Evaluate models using suitable metrics.
+	- Model Validation & Data Leakage Prevention
+	- Model Explainability & Analysis
+	- Keep the best model
    
 - Member 4: [Name] - [Role/Responsibilities]
 
