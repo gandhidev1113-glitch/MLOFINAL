@@ -12,7 +12,7 @@ from pathlib import Path
 
 def run_preprocessing():
     """Run the data preprocessing pipeline."""
-    from src.preprocessing import preprocess_titanic
+    from .preprocessing import preprocess_titanic
     print("Running preprocessing pipeline...\n")
     result = preprocess_titanic()
     if result is None:
@@ -21,14 +21,14 @@ def run_preprocessing():
 
 def run_training():
     """Run the model training pipeline."""
-    from src.train import main as train_main
+    from .train import main as train_main
     print("Running training pipeline...\n")
     train_main()
 
 
 def run_download():
     """Run the data download script."""
-    from download_data import main as download_main
+    from .download_data import main as download_main
     print("Running data download...\n")
     download_main()
 

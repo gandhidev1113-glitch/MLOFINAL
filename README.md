@@ -70,26 +70,34 @@ This project implements an end-to-end ML Ops pipeline for predicting passenger s
    - Go to https://www.kaggle.com/settings
    - Create API token and place `kaggle.json` in `~/.kaggle/` (or `C:\Users\<username>\.kaggle\` on Windows)
 
-3. **Run the pipeline** (using main entry point):
+3. **Run the pipeline** (using main entry point): 
+
+   Run commands from the project root (where `pyproject.toml` is located)
+
    ```bash
    # Download dataset
-   python main.py download
-   
+   uv run python -m src.main download
+
    # Preprocess data
-   python main.py preprocess
-   
+   uv run python -m src.main preprocess
+
    # Train baseline model
-   python main.py train
-   
+   uv run python -m src.main train
+
    # Or run everything at once
-   python main.py all
+   uv run python -m src.main all
    ```
 
    Alternatively, you can run scripts directly:
    ```bash
-   python download_data.py
-   python src/preprocessing.py
-   python src/train.py
+   # Download dataset
+   uv run python -m src.download_data
+
+   # Preprocess data
+   uv run python -m src.preprocessing
+
+   # Train baseline model
+   uv run python -m src.train
    ```
 
 ## 📁 Project Structure
@@ -101,30 +109,31 @@ MLOFINAL/
 │   ├── derived/           # Preprocessed data
 │   └── output/           # Generated outputs (reports, etc.)
 ├── src/
-│   ├── preprocessing.py  # Data preprocessing pipeline
-│   ├── train.py          # Model training script
-│   ├── utils.py          # Shared utility functions
-│   ├── generate_plots.py # Visualization scripts
-│   └── report.qmd        # Report template
+│   ├── __init__.py
+│   ├── main.py            # Main entry point with CLI
+│   ├── download_data.py   # Kaggle API data download script
+│   ├── preprocessing.py   # Data preprocessing pipeline
+│   ├── train.py           # Model training script
+│   ├── utils.py           # Shared utility functions
+│   ├── generate_plots.py  # Visualization scripts
 ├── models/                # Saved models (created during training)
-├── download_data.py       # Kaggle API data download script
-├── main.py               # Main entry point with CLI
-├── pyproject.toml        # Project dependencies
-├── uv.lock               # Locked dependencies
-├── .gitignore            # Git ignore rules
-└── README.md             # This file
+├── pyproject.toml         # Project dependencies
+├── uv.lock                # Locked dependencies
+├── .gitignore             # Git ignore rules
+└── README.md              # This file
 ```
 
 ## 🔄 Workflow
 
-1. **Data Download**: Use `python main.py download` or `download_data.py` to fetch the dataset from Kaggle
-2. **Preprocessing**: Run `python main.py preprocess` or `src/preprocessing.py` to clean and engineer features
-3. **Training**: Execute `python main.py train` or `src/train.py` to train the baseline model
-4. **Evaluation**: Model metrics are displayed during training
+1. **Data Download**: Use `uv run python -m src.main download` (or `uv run python -m src.download_data`) to fetch the dataset from Kaggle  
+2. **Preprocessing**: Run `uv run python -m src.main preprocess` (or `uv run python -m src.preprocessing`) to clean and engineer features  
+3. **Training**: Execute `uv run python -m src.main train` (or `uv run python -m src.train`) to train the baseline model  
+4. **Evaluation**: Model metrics are displayed during training  
 
 ### Quick Start (Full Pipeline)
+
 ```bash
-python main.py all
+uv run python -m src.main all
 ```
 
 This will run: download → preprocess → train in sequence.
