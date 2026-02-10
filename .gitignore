@@ -35,7 +35,8 @@ ENV/
 .DS_Store
 
 # Project specific
-data/raw/*.csv
+# Allow raw data files to be committed
+# data/raw/*.csv  # Commented out to allow raw data in git
 data/derived/*.csv
 data/output
 models/*.pkl
@@ -69,5 +70,6 @@ data/output/*.html
 
 # UV
 .python-version
+
 
 
